@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* 1. AvantGarde from local file */
+@font-face {
+  font-family: 'AvantGarde';
+  src: url('./fonts/agavantgardecyrbook.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 2. VelaSans from local file */
+@font-face {
+  font-family: 'VelaSans';
+  src: url('./fonts/VelaSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 4. Global font stack (AvantGarde first, then VelaSans, then Montserrat) */
+body {
+  font-family: 'VelaSans', 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.32;
+}
+
+h1,
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.125rem;
+}
