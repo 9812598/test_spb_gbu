@@ -1,5 +1,5 @@
 ﻿<script setup lang="ts">
-import { ref } from 'vue'
+import { ref, defineEmits } from 'vue'
 import type { Task } from '../types'
 
 // Modal state
@@ -7,6 +7,10 @@ const open = ref(false)
 
 // Task input
 const description = ref('')
+
+const emit = defineEmits<{
+  (e: 'task-added', task: Task): void
+}>()
 
 // Save task to localStorage
 function saveTask() {
@@ -20,6 +24,8 @@ function saveTask() {
   const tasks = JSON.parse(localStorage.getItem('tasks') || '[]')
   tasks.push(newTask)
   localStorage.setItem('tasks', JSON.stringify(tasks))
+
+  emit('task-added', newTask)
 
   // Reset and close modal
   description.value = ''

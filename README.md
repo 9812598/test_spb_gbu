@@ -15,3 +15,9 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Test
+
+```sh
+npm run preview
+```

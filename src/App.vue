@@ -18,6 +18,10 @@ onMounted(() => {
   }
 })
 
+function addTask(task: Task) {
+  tasks.value.push(task)
+}
+
 // Toggle task status
 function toggleDone(id: string) {
   const task = tasks.value.find((task) => task.id === id)
@@ -64,7 +68,7 @@ const filteredTasks = computed(() => {
   <main>
     <div class="header-container">
       <h1>To do list</h1>
-      <AddTask />
+      <AddTask @task-added="addTask" />
     </div>
 
     <h3 v-if="!tasks.length">No Tasks</h3>
